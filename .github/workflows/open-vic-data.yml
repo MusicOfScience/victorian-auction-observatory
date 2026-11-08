@@ -1,0 +1,41 @@
+name: Refresh open Victorian property baselines
+
+on:
+  schedule:
+    # UTC times; source is annual, so exact Melbourne-local hour is not material.
+    # Sunday and Wednesday checks do NOT represent auction-result revisions.
+    - cron: "13 3 * * 0"
+    - cron: "13 10 * * 3"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: open-vic-data-refresh
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Download and validate licensed open data
+        run: python scripts/refresh_open_vic.py
+      - name: Commit changed government reference tables only
+        run: |
+          git add data/open/
+          if git diff --cached --quiet; then
+            echo "No open-data changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "data: update CC BY Victorian suburb medians"
+          git push
