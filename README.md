@@ -2,7 +2,7 @@
 
 A research system for tracking Victorian auction-result revisions and, once authorised property-level data is available, vendor expectations, post-auction conversion and price realisation.
 
-**Status (8 November 2026): research/architecture stage. Cloudflare is NOT deployed. No live auction collection is active.**
+**Status (8 November 2026): first open-data GitHub Actions workflow committed, but not yet verified by a successful live run. Cloudflare is NOT deployed. No live auction collection is active.**
 
 ## Data sources
 
@@ -15,6 +15,12 @@ A research system for tracking Victorian auction-result revisions and, once auth
 | LANDATA | Authoritative sale history | Paid and eligibility-restricted; individual reports differ from licensed bulk access |
 
 **Important:** Domain API terms include limits on derivative works, third-party access and storage outside Australia. Cloudflare D1's Oceania *location hint* is not an Australia-only residency guarantee. Do not connect Domain data to Cloudflare without explicit permission covering the proposed storage and use.
+
+## Open-data automation already committed
+
+The GitHub Actions workflow [open-vic-data.yml](.github/workflows/open-vic-data.yml) checks versioned CC BY Victorian Government house/unit suburb medians on Sundays and Wednesdays, validates them and commits changed CSV files with provenance. It has not yet been observed running successfully; trigger it at **Actions → Refresh open Victorian property baselines → Run workflow** to validate the first ingest.
+
+See [open-data description](docs/OPEN_DATA.md) and [source-licensing audit](docs/DATA_SOURCES.md). **The government datasets generally update yearly; these Sunday/Wednesday checks are not weekly auction revisions.**
 
 ## Planned indices
 
