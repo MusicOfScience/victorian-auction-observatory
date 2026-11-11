@@ -1,0 +1,28 @@
+{
+  "house": {
+    "attribution": "Department of Transport and Planning, Victorian Government, Victorian Property Sales Report, https://discover.data.vic.gov.au/dataset/victorian-property-sales-report-median-house-by-suburb-time-series, CC BY 4.0; serialised by publicdata.au.",
+    "file": "house_medians.csv",
+    "licence": "CC BY 4.0",
+    "normalised_by": "publicdata.au (National Digital)",
+    "normalised_url": "https://publicdata.au/d/vic-median-house-prices-by-suburb/v/2026-09-29/data.csv",
+    "original_dataset": "https://discover.data.vic.gov.au/dataset/victorian-property-sales-report-median-house-by-suburb-time-series",
+    "publisher": "Department of Transport and Planning, Victorian Government",
+    "retrieved_at_utc": "2026-11-11T17:52:52.526607+00:00",
+    "rows": 8767,
+    "sha256": "3b57b78ceee672180dc26ae35f4288bfd74aeaec1456e521c8753c2c82b68781",
+    "version": "2026-09-29"
+  },
+  "unit": {
+    "attribution": "Department of Transport and Planning, Victorian Government, Victorian Property Sales Report, https://discover.data.vic.gov.au/dataset/victorian-property-sales-report-median-unit-by-suburb-time-series, CC BY 4.0; serialised by publicdata.au.",
+    "file": "unit_medians.csv",
+    "licence": "CC BY 4.0",
+    "normalised_by": "publicdata.au (National Digital)",
+    "normalised_url": "https://publicdata.au/d/vic-median-unit-prices-by-suburb/v/2026-09-29/data.csv",
+    "original_dataset": "https://discover.data.vic.gov.au/dataset/victorian-property-sales-report-median-unit-by-suburb-time-series",
+    "publisher": "Department of Transport and Planning, Victorian Government",
+    "retrieved_at_utc": "2026-11-11T17:52:52.526757+00:00",
+    "rows": 5093,
+    "sha256": "c24887de37ea0941c50bffeee072fb811394a206c41466d0f807a7b7116f7a2f",
+    "version": "2026-09-29"
+  }
+}
